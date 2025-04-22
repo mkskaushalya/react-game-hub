@@ -1,10 +1,18 @@
-import { Button } from "@/components/ui/button";
+import { ThemeProvider } from "@/components/theme-provider";
+import Dashboard from "./dashboard/components/dashboard";
 
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-svh">
-      <Button>Click me</Button>
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Dashboard>
+        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
+          <div className="aspect-video rounded-xl bg-muted/50" />
+          <div className="aspect-video rounded-xl bg-muted/50" />
+          <div className="aspect-video rounded-xl bg-muted/50" />
+        </div>
+        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+      </Dashboard>
+    </ThemeProvider>
   );
 }
 
